@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Piano from "./piano";
+import { motion } from "framer-motion";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Piano />
+        </Route>
+      </Switch>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100px",
+          width: "50%",
+          margin: "1em auto",
+          border: "solid black",
+          borderRadius: "20px",
+        }}
+      >
+        <h2 style={{ color: "black" }}>Made by Jer Ng</h2>
+      </motion.div>
+    </>
   );
 }
 

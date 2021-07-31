@@ -1,0 +1,135 @@
+:root {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+.pianoRoot {
+  margin: 2em auto;
+  border-radius: 10px;
+  width: 50%;
+  position: relative;
+}
+.whiteKeys {
+  display: flex;
+  flex-direction: row;
+}
+.whiteKey {
+  width: 14.2857142857%;
+  height: 600px;
+  border: solid 1px black;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.descriptionKey {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 2em;
+  width: 2em;
+}
+.descriptionKey.white {
+  color: black;
+  border: solid black;
+}
+
+.blackKeys :nth-of-type(1) {
+  margin-left: 9%;
+}
+.blackKeys :nth-of-type(2),
+.blackKeys :nth-of-type(3),
+.blackKeys :nth-of-type(4),
+.blackKeys :nth-of-type(5),
+.blackKeys :nth-of-type(6) {
+  margin-left: 4.35%;
+}
+.descriptionKey.black {
+  color: white;
+  border: solid white;
+  margin-left: 0;
+}
+.blackKeys {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.blackKey {
+  width: 10%;
+  height: 350px;
+  background-color: black;
+  color: white;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+}
+
+.whiteKey.active {
+  background-color: rgb(129, 129, 129);
+  box-shadow: inset 0 0 10px black;
+}
+
+.blackKey.empty {
+  opacity: 0;
+}
+.blackKey.active {
+  background-color: rgb(129, 129, 129);
+}
+@media only screen and (max-width: 800px) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  .pianoRoot {
+    width: 90%;
+    height: auto;
+  }
+  .descriptionKey {
+    display: none;
+  }
+  .pianoRoot {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+  .whiteKey {
+    height: 50vh;
+  }
+  .blackKey {
+    height: 30vh;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  html {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+  }
+  .pianoRoot {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .whiteKey {
+    height: 100vh;
+  }
+  .blackKey {
+    height: 60vh;
+  }
+}
