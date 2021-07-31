@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Piano from "./piano";
 import { motion } from "framer-motion";
+import PageNotFound from "./PageNotFound";
 function App() {
   return (
     <>
@@ -9,11 +10,14 @@ function App() {
         <Route exact path="/">
           <Piano />
         </Route>
+        <Route path="/">
+          <PageNotFound />
+        </Route>
       </Switch>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5 }}
         style={{
           display: "flex",
           justifyContent: "center",
